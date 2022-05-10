@@ -54,7 +54,7 @@ Elements file = posts.select("li");
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="empty.html"><i class="large material-icons">explicit</i> <strong>EV-Charge</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href="empty.jsp"><i class="large material-icons">explicit</i> <strong>EV-Charge</strong></a>
 				
 		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
@@ -68,16 +68,16 @@ Elements file = posts.select("li");
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 					<li>
-                        <a class=" waves-effect waves-dark" href="empty.html"><i class="fa fa-fw fa-file"></i> 사이트 소개</a>
+                        <a class=" waves-effect waves-dark" href="empty.jsp"><i class="fa fa-fw fa-file"></i> 사이트 소개</a>
                     </li>
                     <li>
-                        <a href="charger.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> 주유소 찾기</a>
+                        <a href="map.jsp" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> 주유소 찾기</a>
                     </li>
                     <li>
-                        <a href="news.html" class="active-menu waves-effect waves-dark"><i class="fa fa-desktop"></i> 뉴스</a>
+                        <a href="news.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-desktop"></i> 뉴스</a>
                     </li>
 					<li>
-                        <a href="board.html" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 자유게시판</a>
+                        <a href="board.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 자유게시판</a>
                     </li>
                 </ul>
 

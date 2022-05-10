@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8" />
+<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Target Material Design Bootstrap Admin Template</title>
 	
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
 </head>
 <body>
-    <div id="wrapper">
+	<div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -47,7 +48,7 @@
                         <a class=" waves-effect waves-dark" href="empty.jsp"><i class="fa fa-fw fa-file"></i> 사이트 소개</a>
                     </li>
                     <li>
-                        <a href="charger.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-dashboard"></i> 주유소 찾기</a>
+                        <a href="map.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-dashboard"></i> 주유소 찾기</a>
                     </li>
                     <li>
                         <a href="news.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 뉴스</a>
@@ -264,9 +265,5 @@
 		<script src="assets/js/jquery.metisMenu.js"></script> 
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script> 
-	
- 
-
 </body>
-
 </html>

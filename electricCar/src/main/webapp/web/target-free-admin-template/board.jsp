@@ -31,7 +31,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark" href="empty.html"><i
+				<a class="navbar-brand waves-effect waves-dark" href="empty.jsp"><i
 					class="large material-icons">explicit</i> <strong>EV-Charge</strong></a>
 
 				<div id="sideNav" href="">
@@ -47,13 +47,13 @@
 		<nav class="navbar-default navbar-side" role="navigation">
 			<div class="sidebar-collapse">
 				<ul class="nav" id="main-menu">
-					<li><a class=" waves-effect waves-dark" href="empty.html"><i
+					<li><a class=" waves-effect waves-dark" href="empty.jsp"><i
 							class="fa fa-fw fa-file"></i> 사이트 소개</a></li>
-					<li><a href="charger.html" class="waves-effect waves-dark"><i
+					<li><a href="map.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-dashboard"></i> 주유소 찾기</a></li>
-					<li><a href="news.html" class="waves-effect waves-dark"><i
+					<li><a href="news.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-desktop"></i> 뉴스</a></li>
-					<li><a href="board.html"
+					<li><a href="board.jsp"
 						class="active-menu waves-effect waves-dark"><i
 							class="fa fa-bar-chart-o"></i> 자유게시판</a></li>
 				</ul>
