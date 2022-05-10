@@ -1,3 +1,4 @@
+<%@page import="org.jsoup.select.Elements"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -66,7 +67,7 @@
         <div id="page-wrapper">
 		  <div class="header"> 
                         <h1 class="page-header">
-                            사이트 소개
+                            충전소 찾기
                         </h1>
 						<ol class="breadcrumb">
 					  <li><a href="#">Home</a></li>
@@ -77,36 +78,34 @@
 		</div>
 		
         <div class="row">
-		<div class="col-md-3">
-							<div class="col-md-3">
-								<select class="custom-select " onchange="chageSelect()"
-									id="test" name="key" style="width: 70px; height: 40px;">
-									<option value="지역">선택</option>
-									<option value="서울">서울</option>
-									<option value="경기">경기</option>
-									<option value="인천">인천</option>
-									<option value="대구">대구</option>
-									<option value="대전">대전</option>
-									<option value="충북">충북</option>
-									<option value="충남">충남</option>
-									<option value="경북">경북</option>
-									<option value="경남">경남</option>
-									<option value="강원">강원</option>
-									<option value="전북">전북</option>
-									<option value="전남">전남</option>
-									<option value="제주">제주</option>
-								</select>
-								
-							
-							</div>
-							<div id="input-form">
-								<input type="text" id="keyword"
-									style="width: 180px; height: 40px; padding-left: 20px;" placeholder="search...">
-							</div>
-
-					
-		
-		</div>
+			<div class="col-md-3" style="padding-left: 50px;">
+				<div>
+					<div>
+						<select class="custom-select" onchange="chageSelect()" id="test"
+							name="key" style="width: 70px; height: 40px;">
+							<option value="지역">선택</option>
+							<option value="서울">서울</option>
+							<option value="경기">경기</option>
+							<option value="인천">인천</option>
+							<option value="대구">대구</option>
+							<option value="대전">대전</option>
+							<option value="충북">충북</option>
+							<option value="충남">충남</option>
+							<option value="경북">경북</option>
+							<option value="경남">경남</option>
+							<option value="강원">강원</option>
+							<option value="전북">전북</option>
+							<option value="전남">전남</option>
+							<option value="제주">제주</option>
+						</select>
+					</div>
+					<div id="input-form">
+						<input type="text" id="keyword"
+							style="width: 180px; height: 40px; padding-left: 20px;"
+							placeholder="search...">
+					</div>
+				</div>
+			</div>
 		<div class="col-md-9">
 			<div>
 				<!-- 지도를 표시할 div 입니다 -->
