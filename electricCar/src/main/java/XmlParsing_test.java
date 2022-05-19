@@ -1,5 +1,4 @@
 
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -21,7 +20,7 @@ public class XmlParsing_test {
 
    public static void main(String[] args) {
       int page = 1;   // 페이지 초기값 
-      
+ 
       try{
          while(true){
             // parsing할 url 지정(API 키 포함해서)
@@ -30,6 +29,7 @@ public class XmlParsing_test {
             DocumentBuilderFactory dbFactoty = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
             Document doc = dBuilder.parse(url);
+            
             
             // root tag 
             doc.getDocumentElement().normalize();
@@ -44,19 +44,19 @@ public class XmlParsing_test {
                if(nNode.getNodeType() == Node.ELEMENT_NODE){
                   
                   Element eElement = (Element) nNode;
+   
                   System.out.println("######################");
                   //System.out.println(eElement.getTextContent());
                   System.out.println("이름  : " + getTagValue("statNm", eElement));
                   System.out.println("위도 : " + getTagValue("lat", eElement));
                   System.out.println("경도 : " + getTagValue("lng", eElement));
                   System.out.println("사용시간 : " + getTagValue("useTime", eElement));
-                  
                }   // for end
             }   // if end
             
             page += 1;
             System.out.println("page number : "+page);
-            if(page > 20){   
+            if(page > 4){   
                break;
             }
          }   // while end

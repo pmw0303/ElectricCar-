@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'WooridaumB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/WooridaumB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+a {
+	font-family: WooridaumB;
+}
+.news{	
+	border-bottom: solid 1px #eeeeee;
+}
+.page-header{
+	font-family: WooridaumB;
+}

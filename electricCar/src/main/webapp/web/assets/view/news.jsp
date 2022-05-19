@@ -19,6 +19,8 @@
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="../materialize/css/materialize.min.css" media="screen,projection" />
+	<!-- 사용자 css -->
+	<link href="../css/mycss.css" rel="stylesheet" />
     <!-- Bootstrap Styles-->
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -90,11 +92,6 @@ Elements file = posts.select("li");
                         <h1 class="page-header">
                             뉴스
                         </h1>
-						<ol class="breadcrumb">
-					  <li><a href="empty.jsp">Home</a></li>
-					  <li><a href="#">Empty</a></li>
-					  <li class="active">Data</li>
-					</ol> 
 									
 		</div>
             <div id="page-inner"> 
@@ -109,7 +106,7 @@ Elements file = posts.select("li");
 								<section class="resume-section" id="news" style="margin: 15px;">
 								<div class="resume-section-content">
 										<h2 class="mb-5">News</h2>
-										<div class="subheading mb-3">* 전기차 관련 실시간 뉴스정보입니다.</div>
+										<div class="subheading mb-3"> <a> * 전기차 관련 실시간 뉴스정보입니다. (실시간 업데이트)</a></div>
 										<br>
 										<%
 										int j = 8	;
@@ -119,19 +116,17 @@ Elements file = posts.select("li");
 										<div
 											class="d-flex flex-column flex-md-row justify-content-between mb-5">
 											<div class="flex-grow-1">
-												<h3 class="mb-0">
+												<div class="form-group">
+												<h3 class="mb-2">
 													<a href="<%=element.select(".news_tit").attr("href")%>"><%=element.select(".news_tit").text()%></a>
 												</h3>
+												</div>
 												<div class="subheading mb-3"><%=element.select(".dsc_txt_wrap").text()%></div>
 											</div>
-
 										</div>
-
 										<%
 										j++;
-										if (j == 8) {
-											break;
-										}
+										if (j == 8) {break;}
 										}
 										%>
 

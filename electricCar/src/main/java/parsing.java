@@ -1,4 +1,4 @@
-package controller;
+
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,20 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ChatDao;
-import dto.Chatting;
-
 /**
- * Servlet implementation class chatting
+ * Servlet implementation class parsing
  */
-@WebServlet("/chatting")
-public class chatting extends HttpServlet {
+@WebServlet("/parsing")
+public class parsing extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public chatting() {
+    public parsing() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,19 +27,6 @@ public class chatting extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");
-		String nickname = request.getParameter("nickname");
-		String chatting = request.getParameter("chatting");
-		String time = request.getParameter("time");
-		Chatting chat = new Chatting(0, nickname, chatting, time);
-		boolean result = ChatDao.getchatDao.sendmsg(chat);
-		
-		if(result) {
-			response.getWriter().print(1);
-		}
-		else {
-			response.getWriter().print(2);
-		}
 	}
 
 	/**

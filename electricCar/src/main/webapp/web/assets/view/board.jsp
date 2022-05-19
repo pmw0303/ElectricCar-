@@ -8,25 +8,11 @@
 <title>Target Material Design Bootstrap Admin Template</title>
 
 <style type="text/css">
-.content {
+.chatting {
 	background-color: yellow;
 	border-radius: 10px;
 	padding: 10px;
 	display: inline-block
-}
-
-.box {
-	margin: 20px;
-}
-
-.date {
-	font-size: 3px;
-	margin: 10px;
-}
-
-.img {
-	width: 100%;
-	padding: 50px;
 }
 </style>
 
@@ -35,6 +21,8 @@
 <link rel="stylesheet"
 	href="/target-free-admin-template/assets/materialize/css/materialize.min.css"
 	media="screen,projection" />
+	<!-- 사용자 css -->
+	<link href="../css/mycss.css" rel="stylesheet" />
 <!-- Bootstrap Styles-->
 <link href="../css/bootstrap.css" rel="stylesheet" />
 <!-- FontAwesome Styles-->
@@ -94,25 +82,18 @@
 		<div id="page-wrapper">
 			<div class="header">
 				<h1 class="page-header">익명 채팅방</h1>
-				<ol class="breadcrumb">
-					<li><a href="empty.jsp">Home</a></li>
-					<li><a href="#">Empty</a></li>
-					<li class="active">Data</li>
-				</ol>
-
 			</div>
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<p>
+						<a>
 							익명으로 채팅하는 공간입니다<br> 상대방에게 악의적인 채팅을 금합니다
-						</p>
+						</a>
 						<div class="container">
-							<div class="col-md-4 offset-4">
+							<div class="col-md-8 offset-4">
 								<br>
-								<h3 class="bigtext">채팅</h3>
 								<div id="contentlist"
-									style="border-radius: 10px; border: 1px solid black; height: 500px; overflow-y: scroll"></div>
+									style="border-radius: 10px; border: 1px solid black; height: 500px; overflow-y: scroll; background-color: white;"></div>
 								<br>
 								<div class="row">
 									<div class="col-md-3">
@@ -145,6 +126,7 @@
 		<!-- /. WRAPPER  -->
 	</div>
 	<!-- JS Scripts-->
+	
 	<!-- jQuery Js -->
 	<script src="../js/jquery-1.10.2.js"></script>
 
@@ -152,10 +134,11 @@
 	<script src="../js/bootstrap.min.js"></script>
 
 	<script src="../materialize/js/materialize.min.js"></script>
-
+	<script type="text/javascript" src="../js/chatting.js"></script>
 	<!-- Metis Menu Js -->
 	<script src="../js/jquery.metisMenu.js"></script>
 	<!-- Custom Js -->
 	<script src="../js/custom-scripts.js"></script>
+	
 </body>
 </html>
