@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.Iterator;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,11 +12,13 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
 
 /**
  * Servlet implementation class latlontest
@@ -48,15 +52,13 @@ public class latlontest extends HttpServlet {
 		
 		 try{
 	      
-			String url = "http://apis.data.go.kr/B552584/EvCharger/getChargerInfo?serviceKey=mnUlBGGUwAhkbrePB0BjlD4C6IgJBf%2BnggDmp4B%2F75ZYKBpXRAEkpYE5PTjpa0I4SQ9Dks5%2FJkyd56nSL75%2B0Q%3D%3D&pageNo="+1+"&numOfRows=500&zcode=41";
+			String url = "http://apis.data.go.kr/B552584/EvCharger/getChargerInfo?serviceKey=mnUlBGGUwAhkbrePB0BjlD4C6IgJBf%2BnggDmp4B%2F75ZYKBpXRAEkpYE5PTjpa0I4SQ9Dks5%2FJkyd56nSL75%2B0Q%3D%3D&pageNo="+1+"&numOfRows=1000&zcode=41";
 	        
 	        DocumentBuilderFactory dbFactoty = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
 	        Document doc = dBuilder.parse(url);
 	        // root tag 
             doc.getDocumentElement().normalize();
-            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-        
             NodeList nList = doc.getElementsByTagName("item");
             System.out.println("파싱할 리스트 수 : "+ nList.getLength());
             
@@ -68,22 +70,43 @@ public class latlontest extends HttpServlet {
                 if(nNode.getNodeType() == Node.ELEMENT_NODE){
                    
                    Element eElement = (Element) nNode;
-    
+                   
                    JSONObject jsonObject = new JSONObject();
-                   jsonObject.put(   "lat"   ,   getTagValue("lat", eElement)   );
-                   jsonObject.put(    "lng"  ,   getTagValue("lng", eElement)   );
-                   jsonObject.put(    "statId"  ,   getTagValue("statId", eElement)   );
-                   System.out.println("사용시간 : " + getTagValue("statId", eElement));
-                   //System.out.println(eElement.getTextContent());
+                   jsonObject.put(   "lat"   ,   getTagValue("lat", eElement));
+                   jsonObject.put(    "lng"  ,   getTagValue("lng", eElement));
+                   jsonObject.put(    "statId"  ,   getTagValue("statId", eElement));
+                   jsonObject.put(    "statNm"  ,   getTagValue("statNm", eElement));
+                   
+                   for( int i = 0 ; i<jsonArray.length(); i++ ) {
+                	   
+                	  
+                         
+                	  String[] keys =  JSONObject.getNames( jsonArray.getJSONObject(i ) );
+                	  for( String key : keys ) {
+                		  if( key.equals("statId") ) {
+                			  if(   jsonArray.getJSONObject(i ).get(key).equals(   getTagValue("statId", eElement)    )    ) {
+                				  jsonArray.remove( i );   
+                				  
+                			  }
+                		  }
+                	  }
+                	 
+                   }
                    
                    jsonArray.put( jsonObject );
+                       
+                   
+//                   System.out.println(eElement.getTextContent());
+                   
+//                   Iterator it = jsonObject.keys();
+//                   while (it.hasNext()) {
+//                       String key = (String) it.next();
+//                       System.out.println("key: " + key + ", value: " + jsonObject.getString(key));
+//                   }
+//                   System.out.println(jsonObject.toString());
                    
                 }   // for end
              }   // if end
-       
-
-            	
-            
             
             	object.put(  "positions"   , jsonArray);
             
@@ -95,7 +118,7 @@ public class latlontest extends HttpServlet {
 				response.getWriter().print( object );
             
       } catch (Exception e){   
-         System.out.println("오류" + e);
+         System.out.println("오류 " + e);
       }   // try~catch end
 	}
 

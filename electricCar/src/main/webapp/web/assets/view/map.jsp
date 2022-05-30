@@ -75,7 +75,7 @@
 		</div>
 		
         <div class="row">
-			<div class="col-md-3" style="padding-left: 40px;">
+			<!-- <div class="col-md-3" style="padding-left: 40px;">
 				<div class="row">
 					<div>
 						<select class="custom-select" onchange="chageSelect()" id="test"
@@ -97,12 +97,13 @@
 						</select>
 					</div>
 					<div id="input-form">
-						<input type="text" id="keyword"
+						<input type="
+						text" id="keyword"
 							style="width: 180px; height: 40px; padding-left: 20px;"
 							placeholder="search...">
 					</div>
-				</div>
-			</div>
+				</div>-->
+			</div> 
 		<div class="col-md-9">
 			<div>
 				<!-- 지도를 표시할 div 입니다 -->
@@ -126,21 +127,32 @@
 						        minLevel: 2 // 클러스터 할 최소 지도 레벨 
 						    });
 						 
+						    var markerImageUrl = '/electricCar/web/assets/img/marker.png', 
+						    markerImageSize = new kakao.maps.Size(40, 42), // 마커 이미지의 크기
+						    markerImageOptions = { 
+						        offset : new kakao.maps.Point(16, 21)// 마커 좌표에 일치시킬 이미지 안의 좌표
+						    };
+							
+							// 마커 이미지를 생성한다
+							var markerImage = new kakao.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
+						    
 						    // 데이터를 가져오기 위해 jQuery를 사용합니다
 						    // 데이터를 가져와 마커를 생성하고 클러스터러 객체에 넘겨줍니다
 						    $.get("latlontest", function(data) {
 						        // 데이터에서 좌표 값을 가지고 마커를 표시합니다
 						        // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
-						        
+						     	 
 						        var markers = $(data.positions).map(function(i, position) {
 						            return new kakao.maps.Marker({
+						            	image : markerImage,
 						                position : new kakao.maps.LatLng(position.lat, position.lng)
 						            });
 						        });
-
+						        
 						        // 클러스터러에 마커들을 추가합니다
 						        clusterer.addMarkers(markers);
-						        
+						    
+						    
 						    });
 						
 							/* ========================================================================================================= */
@@ -155,7 +167,7 @@
 									lon = position.coords.longitude; // 경도
 
 									var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-									message = '<div style="padding:3px;"> 현재 위치 </div>'; // 인포윈도우에 표시될 내용입니다
+									message = '<div style="padding:3px;"> 내 위치 </div>'; // 인포윈도우에 표시될 내용입니다
 
 								var radius = 3000;        
 								
@@ -185,7 +197,7 @@
 
 								displayMarker(locPosition, message);
 							}
-
+							
 							// 지도에 마커와 인포윈도우를 표시하는 함수입니다
 							function displayMarker(locPosition, message) {
 
@@ -194,7 +206,7 @@
 									map : map,
 									position : locPosition
 								});
-
+								
 								var iwContent = message, // 인포윈도우에 표시할 내용
 								iwRemoveable = true;
 
@@ -209,7 +221,17 @@
 
 								// 지도 중심좌표를 접속위치로 변경합니다
 								map.setCenter(locPosition);
+								
+								
+								// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
+								kakao.maps.event.addListener(marker, 'click', function() {
+									alert('zz');
+								});
+								
 							}
+							
+							
+							
 						
 				</script>
 			</div>
@@ -219,7 +241,7 @@
              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
-        </div>
+       
      <!-- /. WRAPPER  -->
      
     <!-- JS Scripts-->
