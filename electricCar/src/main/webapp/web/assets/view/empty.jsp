@@ -57,7 +57,7 @@
 					<li><a href="news.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-desktop"></i> 뉴스</a></li>
 					<li><a href="board.jsp" class="waves-effect waves-dark"><i
-							class="fa fa-bar-chart-o"></i> 자유게시판</a></li>
+							class="fa fa-bar-chart-o"></i> 익명 채팅방</a></li>
 				</ul>
 
 			</div>

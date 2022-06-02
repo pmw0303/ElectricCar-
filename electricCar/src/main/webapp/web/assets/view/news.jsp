@@ -79,7 +79,7 @@ Elements file = posts.select("li");
                         <a href="news.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-desktop"></i> 뉴스</a>
                     </li>
 					<li>
-                        <a href="board.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 자유게시판</a>
+                        <a href="board.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 익명 채팅방</a>
                     </li>
                 </ul>
 
@@ -114,15 +114,15 @@ Elements file = posts.select("li");
 											JSONObject siteJsonObject = new JSONObject();
 										%>
 										<div
-											class="d-flex flex-column flex-md-row justify-content-between mb-5">
-											<div class="flex-grow-1">
+											class="d-flex flex-column justify-content-between mb-5">
+											
 												<div class="form-group">
-												<h3 class="mb-2">
-													<a href="<%=element.select(".news_tit").attr("href")%>"><%=element.select(".news_tit").text()%></a>
-												</h3>
+													<h3 class="mb-2">
+														<a href="<%=element.select(".news_tit").attr("href")%>"><%=element.select(".news_tit").text()%></a>
+													</h3>
 												</div>
 												<div class="subheading mb-3"><%=element.select(".dsc_txt_wrap").text()%></div>
-											</div>
+											
 										</div>
 										<%
 										j++;

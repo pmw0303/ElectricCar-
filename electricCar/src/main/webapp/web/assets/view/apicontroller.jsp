@@ -8,11 +8,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-int s = 1;
-int e = 2000;
 
-URL url = new URL("https://api.odcloud.kr/api/uws/v1/inventory?page=" + s + "&perPage=" + e
-		+ "&serviceKey=PGVtm4jDhZvj1x1LQZQ902znlkuU1SXojUN4uaP6VAATxh562RB%2Bsk5W6obsub4hCwvKxyPG29sb7y1mrxZKTA%3D%3D");
+
+URL url = new URL("http://apis.data.go.kr/B552584/EvCharger/getChargerInfo?serviceKey=mnUlBGGUwAhkbrePB0BjlD4C6IgJBf%2BnggDmp4B%2F75ZYKBpXRAEkpYE5PTjpa0I4SQ9Dks5%2FJkyd56nSL75%2B0Q%3D%3D&pageNo=1&numOfRows=1000&zcode=41");
 
 BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
 String rs = bf.readLine();

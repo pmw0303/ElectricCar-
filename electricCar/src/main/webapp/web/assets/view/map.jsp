@@ -35,14 +35,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand waves-effect waves-dark" href="empty.jsp"><i class="large material-icons">explicit</i> <strong>EV-Charge</strong></a>
-				
-		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
-
         </nav>
-		<!-- Dropdown Structure -->
- 
- 
+
 	   <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
@@ -57,7 +52,7 @@
                         <a href="news.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 뉴스</a>
                     </li>
 					<li>
-                        <a href="board.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 자유게시판</a>
+                        <a href="board.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 익명 채팅방</a>
                     </li>
             
                 </ul>
@@ -67,13 +62,14 @@
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
-		  <div class="header"> 
-                        <h1 class="page-header">
-                            충전소 찾기
-                        </h1>
-							
+		<div class="header"> 
+               <h1 class="page-header">
+                   충전소 찾기
+               </h1>
+               <a style="margin-left: 30px;"> 주변 충전소를 찾는 지도입니다.<br> </a>
+               
 		</div>
-		
+	
         <div class="row">
 			<!-- <div class="col-md-3" style="padding-left: 40px;">
 				<div class="row">
@@ -144,9 +140,16 @@
 						     	 
 						        var markers = $(data.positions).map(function(i, position) {
 						            return new kakao.maps.Marker({
-						            	image : markerImage,
-						                position : new kakao.maps.LatLng(position.lat, position.lng)
+						                position : new kakao.maps.LatLng(position.lat, position.lng),
+						                image : markerImage,
+						            
 						            });
+						       
+						         // 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
+						    		kakao.maps.event.addListener(markers, 'click', function() {
+						    		    alert('마커를 클릭했습니다!');
+						    		});
+						        
 						        });
 						        
 						        // 클러스터러에 마커들을 추가합니다

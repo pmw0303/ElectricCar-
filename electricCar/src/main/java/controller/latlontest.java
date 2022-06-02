@@ -52,7 +52,7 @@ public class latlontest extends HttpServlet {
 		
 		 try{
 	      
-			String url = "http://apis.data.go.kr/B552584/EvCharger/getChargerInfo?serviceKey=mnUlBGGUwAhkbrePB0BjlD4C6IgJBf%2BnggDmp4B%2F75ZYKBpXRAEkpYE5PTjpa0I4SQ9Dks5%2FJkyd56nSL75%2B0Q%3D%3D&pageNo="+1+"&numOfRows=1000&zcode=41";
+			String url = "http://apis.data.go.kr/B552584/EvCharger/getChargerInfo?serviceKey=mnUlBGGUwAhkbrePB0BjlD4C6IgJBf%2BnggDmp4B%2F75ZYKBpXRAEkpYE5PTjpa0I4SQ9Dks5%2FJkyd56nSL75%2B0Q%3D%3D&pageNo="+1+"&numOfRows=500&zcode=41";
 	        
 	        DocumentBuilderFactory dbFactoty = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
@@ -78,26 +78,22 @@ public class latlontest extends HttpServlet {
                    jsonObject.put(    "statNm"  ,   getTagValue("statNm", eElement));
                    
                    for( int i = 0 ; i<jsonArray.length(); i++ ) {
-                	   
-                	  
                          
                 	  String[] keys =  JSONObject.getNames( jsonArray.getJSONObject(i ) );
-                	  for( String key : keys ) {
-                		  if( key.equals("statId") ) {
-                			  if(   jsonArray.getJSONObject(i ).get(key).equals(   getTagValue("statId", eElement)    )    ) {
-                				  jsonArray.remove( i );   
-                				  
-                			  }
-                		  }
-                	  }
-                	 
+						for (String key : keys) {
+							if (key.equals("statId")) {
+								if (jsonArray.getJSONObject(i).get(key).equals(getTagValue("statId", eElement))) {
+
+									jsonArray.remove(i);
+								}
+							}
+						}
+
                    }
                    
                    jsonArray.put( jsonObject );
-                       
                    
 //                   System.out.println(eElement.getTextContent());
-                   
 //                   Iterator it = jsonObject.keys();
 //                   while (it.hasNext()) {
 //                       String key = (String) it.next();
@@ -109,7 +105,7 @@ public class latlontest extends HttpServlet {
              }   // if end
             
             	object.put(  "positions"   , jsonArray);
-            
+            	
 		         // 1. 응답객체내 한글 인코딩 타입설정 
 				response.setCharacterEncoding("UTF-8");
 				// *** 2. 응답객체의 자료형 [ 문자열 -> json 형식 ] 
