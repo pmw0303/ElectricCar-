@@ -1,6 +1,4 @@
-
-
-전기차 충전소 찾기 사이트
+내 주변 전기차 충전소 찾기 사이트
 
 처음 화면
 ![image](https://user-images.githubusercontent.com/57170517/172340541-2d91a30f-a07c-40fe-b044-0a2fff6c3a7c.png)
