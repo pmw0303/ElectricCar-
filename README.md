@@ -3,10 +3,9 @@
 처음 화면
 ![image](https://user-images.githubusercontent.com/57170517/172340541-2d91a30f-a07c-40fe-b044-0a2fff6c3a7c.png)
 
-현재 위치와 충전소 위치를 알려주는 화면
+현재 위치와 충전소 위치, 정보를 알려주는 화면
 kakao map api
 ![image](https://user-images.githubusercontent.com/57170517/172340661-9acf23de-025a-46bf-8264-33dbb9f937a9.png)
-인포윈도우 / 주변 띄우기 진행중
 
 뉴스 크롤링
 ![image](https://user-images.githubusercontent.com/57170517/172340816-22fcecaa-9296-4f28-8960-217823024fde.png)
