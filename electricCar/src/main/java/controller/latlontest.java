@@ -60,7 +60,7 @@ public class latlontest extends HttpServlet {
 	        // root tag 
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("item");
-            System.out.println("ÆÄ½ÌÇÒ ¸®½ºÆ® ¼ö : "+ nList.getLength());
+            System.out.println("íŒŒì‹±í•  ë¦¬ìŠ¤íŠ¸ ìˆ˜ : "+ nList.getLength());
             
             JSONArray jsonArray = new JSONArray();
             JSONObject object = new JSONObject();
@@ -76,7 +76,7 @@ public class latlontest extends HttpServlet {
                    jsonObject.put(    "lng"  ,   getTagValue("lng", eElement));
                    jsonObject.put(    "statId"  ,   getTagValue("statId", eElement));
                    jsonObject.put(    "statNm"  ,   getTagValue("statNm", eElement));
-                   
+                   jsonObject.put(    "useTime"  ,   getTagValue("useTime", eElement));
                    for( int i = 0 ; i<jsonArray.length(); i++ ) {
                          
                 	  String[] keys =  JSONObject.getNames( jsonArray.getJSONObject(i ) );
@@ -106,15 +106,15 @@ public class latlontest extends HttpServlet {
             
             	object.put(  "positions"   , jsonArray);
             	
-		         // 1. ÀÀ´ä°´Ã¼³» ÇÑ±Û ÀÎÄÚµù Å¸ÀÔ¼³Á¤ 
+		         // 1. ì‘ë‹µê°ì²´ë‚´ í•œê¸€ ì¸ì½”ë”© íƒ€ì…ì„¤ì • 
 				response.setCharacterEncoding("UTF-8");
-				// *** 2. ÀÀ´ä°´Ã¼ÀÇ ÀÚ·áÇü [ ¹®ÀÚ¿­ -> json Çü½Ä ] 
+				// *** 2. ì‘ë‹µê°ì²´ì˜ ìë£Œí˜• [ ë¬¸ìì—´ -> json í˜•ì‹ ] 
 				response.setContentType("application/json");
-				// 3. ÀÀ´äÀü¼Û 
+				// 3. ì‘ë‹µì „ì†¡ 
 				response.getWriter().print( object );
             
       } catch (Exception e){   
-         System.out.println("¿À·ù " + e);
+         System.out.println("ì˜¤ë¥˜ " + e);
       }   // try~catch end
 	}
 
